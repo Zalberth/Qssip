@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    Demo_draw();
-//    w.show();
+//    Demo_draw();
+    w.show();
     return a.exec();
 }
