@@ -6,6 +6,7 @@
 #include <QApplication>
 
 using namespace cv;
+
 void Demo_draw()
 {
     Mat img = Mat::zeros(Size(500,500), CV_8UC3);
