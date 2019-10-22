@@ -19,8 +19,6 @@ void Demo_draw()
     imshow("draw test", img);
 }
 
-
-
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
