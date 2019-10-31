@@ -19,4 +19,8 @@ void MainWindow::on_sendBtn_clicked(bool checked)
 
     // process text to be sent
     ui->msgListBox->setText(ui->textSendingBox->toPlainText());
+    // get current time
+    QString msgTime = QString::number(QDateTime::currentDateTime().toTime_t());
+    cout << msgTime.toStdString() << endl;
+
 }
