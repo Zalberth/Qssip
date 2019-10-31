@@ -20,7 +20,7 @@
       <item>
        <layout class="QVBoxLayout" name="verticalLayout" stretch="3,1">
         <item>
-         <widget class="QTextEdit" name="textEdit_2"/>
+         <widget class="QTextEdit" name="msgListBox"/>
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,5">
@@ -30,10 +30,16 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
-             <widget class="QTextEdit" name="textEdit"/>
+             <widget class="QTextEdit" name="textSendingBox"/>
             </item>
             <item>
              <widget class="QPushButton" name="sendBtn">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="text">
                <string>Send</string>
               </property>

@@ -13,3 +13,11 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_sendBtn_clicked(bool checked)
+{
+    Q_UNUSED(checked)
+
+    // process text to be sent
+    ui->msgListBox->setText(ui->textSendingBox->toPlainText());
+}
