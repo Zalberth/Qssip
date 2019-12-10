@@ -3,7 +3,9 @@
 
 #include <QMainWindow>
 #include <QDateTime>
+#include <QtNetwork>
 #include <iostream>
+#include <QDebug>
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -20,6 +22,8 @@ public:
 
 private slots:
     void on_sendBtn_clicked(bool checked);
+    void sendLoginReq();
+    void requestFinished(QNetworkReply* reply);
 
 private:
     Ui::MainWindow *ui;
