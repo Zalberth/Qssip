@@ -2,7 +2,7 @@ QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++11 sdk_no_version_check
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -26,13 +26,16 @@ LIBS += -L/usr/local/lib \
   -lopencv_imgcodecs
 
 SOURCES += \
+    logindlg.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    logindlg.h \
     mainwindow.h
 
 FORMS += \
+    logindlg.ui \
     mainwindow.ui
 
 # Default rules for deployment.

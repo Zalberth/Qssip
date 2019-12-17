@@ -31,6 +31,19 @@ void MainWindow::on_sendBtn_clicked(bool checked)
 void MainWindow::sendLoginReq()
 {
     cout << "hello user!!" << endl;
+
+    // show login dialog
+    // 禁止与其它窗口交互
+    loginDlg.setWindowModality(Qt::ApplicationModal);
+    // TODO: 禁止最大化最小化，Mac下暂时无效
+    loginDlg.setWindowFlags(loginDlg.windowFlags()&~Qt::WindowMaximizeButtonHint);
+    // 固定窗体大小
+    loginDlg.setFixedSize(loginDlg.width(), loginDlg.height());
+    // 显示窗口
+    loginDlg.show();
+
+
+
     // send network request
     QNetworkRequest req;
     QNetworkAccessManager* nm = new QNetworkAccessManager(this);
