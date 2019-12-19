@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->actionLogin->setShortcut(QKeySequence("Command+L"));
+    ui->actionLogin->setShortcut(QKeySequence("Command + L"));
     connect(ui->actionLogin, &QAction::triggered, this, &MainWindow::sendLoginReq);
 }
 
@@ -41,8 +41,6 @@ void MainWindow::sendLoginReq()
     loginDlg.setFixedSize(loginDlg.width(), loginDlg.height());
     // 显示窗口
     loginDlg.show();
-
-
 
     // send network request
     QNetworkRequest req;
