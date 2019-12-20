@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QDateTime>
-#include <QtNetwork>
 #include <iostream>
 #include <QDebug>
 #include "logindlg.h"
@@ -24,10 +23,11 @@ public:
 private slots:
     void on_sendBtn_clicked(bool checked);
     void sendLoginReq();
-    void requestFinished(QNetworkReply* reply);
+    void hideLoginDlg();
 
 private:
     Ui::MainWindow *ui;
     LoginDlg loginDlg;
+    bool isLogin;
 };
 #endif // MAINWINDOW_H
