@@ -50,6 +50,7 @@ void MainWindow::hideLoginDlg()
 {
     loginDlg.hide();
     isLogin = true;
+    this->setWindowTitle("Hello, " + loginDlg.GetCurUser());
     qDebug() << "in HideLoginDlg: isLogin " << isLogin;
 }
 

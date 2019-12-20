@@ -13,6 +13,11 @@ LoginDlg::~LoginDlg()
     delete ui;
 }
 
+QString LoginDlg::GetCurUser()
+{
+    return curUser;
+}
+
 void LoginDlg::on_pushButton_clicked()
 {
     // send network request
@@ -68,6 +73,7 @@ void LoginDlg::requestFinished(QNetworkReply *reply)
                     if(found == 1)
                     {
                         // 登录成功了
+                        curUser = ui->lineEditUsername->text();
                         emit loginSuccess();
                     }
                 }

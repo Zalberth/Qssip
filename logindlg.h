@@ -16,6 +16,8 @@ public:
     explicit LoginDlg(QWidget *parent = nullptr);
     ~LoginDlg();
 
+    QString GetCurUser();
+
 private slots:
     void on_pushButton_clicked();
     void requestFinished(QNetworkReply *reply);
@@ -25,6 +27,7 @@ signals:
 
 private:
     Ui::LoginDlg *ui;
+    QString curUser;
 };
 
 #endif // LOGINDLG_H
