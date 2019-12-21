@@ -81,3 +81,11 @@ void LoginDlg::requestFinished(QNetworkReply *reply)
         }
     }
 }
+
+void LoginDlg::on_pushButtonReg_clicked()
+{
+    // hide login dialog
+    this->hide();
+    // emit register event
+    emit regEvent();
+}

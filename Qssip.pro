@@ -28,15 +28,18 @@ LIBS += -L/usr/local/lib \
 SOURCES += \
     logindlg.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    regdlg.cpp
 
 HEADERS += \
     logindlg.h \
-    mainwindow.h
+    mainwindow.h \
+    regdlg.h
 
 FORMS += \
     logindlg.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    regdlg.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

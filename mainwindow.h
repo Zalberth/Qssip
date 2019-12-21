@@ -6,6 +6,7 @@
 #include <iostream>
 #include <QDebug>
 #include "logindlg.h"
+#include "regdlg.h"
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -24,10 +25,12 @@ private slots:
     void on_sendBtn_clicked(bool checked);
     void sendLoginReq();
     void hideLoginDlg();
+    void showRegDlg();
 
 private:
     Ui::MainWindow *ui;
     LoginDlg loginDlg;
+    RegDlg regDlg;
     bool isLogin;
 };
 #endif // MAINWINDOW_H

@@ -9,9 +9,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->actionLogin->setShortcut(QKeySequence("Command + L"));
     connect(ui->actionLogin, &QAction::triggered, this, &MainWindow::sendLoginReq);
     connect(&loginDlg, &LoginDlg::loginSuccess, this, &MainWindow::hideLoginDlg);
-
+    connect(&loginDlg, &LoginDlg::regEvent, this, &MainWindow::showRegDlg);
     isLogin = false;
 }
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -25,7 +26,6 @@ void MainWindow::on_sendBtn_clicked(bool checked)
     // get current time
     QString msgTime = QString::number(QDateTime::currentDateTime().toTime_t());
     cout << msgTime.toStdString() << endl;
-
 }
 
 
@@ -49,9 +49,22 @@ void MainWindow::sendLoginReq()
 void MainWindow::hideLoginDlg()
 {
     loginDlg.hide();
+    // 设置登录状态
     isLogin = true;
     this->setWindowTitle("Hello, " + loginDlg.GetCurUser());
     qDebug() << "in HideLoginDlg: isLogin " << isLogin;
+}
+
+void MainWindow::showRegDlg()
+{
+    // 禁止与其它窗口交互
+    regDlg.setWindowModality(Qt::ApplicationModal);
+    // TODO: 禁止最大化最小化，Mac下暂时无效
+    regDlg.setWindowFlags(loginDlg.windowFlags()&~Qt::WindowMaximizeButtonHint);
+    // 固定窗体大小
+    regDlg.setFixedSize(loginDlg.width(), loginDlg.height());
+    // 显示窗口
+    regDlg.show();
 }
 
 

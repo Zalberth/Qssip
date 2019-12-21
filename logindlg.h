@@ -22,9 +22,11 @@ private slots:
     void on_pushButton_clicked();
     void requestFinished(QNetworkReply *reply);
 
+    void on_pushButtonReg_clicked();
+
 signals:
     void loginSuccess(); // 成功登录
-
+    void regEvent();
 private:
     Ui::LoginDlg *ui;
     QString curUser;
