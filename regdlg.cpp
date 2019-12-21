@@ -145,7 +145,15 @@ void RegDlg::requestFinished(QNetworkReply *reply)
                         this->hide();
                         ui->labelTip->clear();
                     } else {
-                        ui->labelTip->setText("fail to register ...");
+                        switch (succ) {
+                            case 2 :
+                            ui->labelTip->setText("User already exists.");
+                            break;
+                            default:
+                            ui->labelTip->setText("fail to register ...");
+                            break;
+                        }
+
                     }
                 }
             }
